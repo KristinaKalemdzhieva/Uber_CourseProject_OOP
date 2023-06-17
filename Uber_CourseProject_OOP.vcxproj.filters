@@ -75,6 +75,30 @@
     <ClCompile Include="ClientCommandFactory.cpp">
       <Filter>ClientCommands</Filter>
     </ClCompile>
+    <ClCompile Include="DriverCommand1.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCommand2.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCommand3.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCommand4.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCommand5.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCommand6.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCommandExecutor.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCommandFactory.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
@@ -136,6 +160,33 @@
     </ClInclude>
     <ClInclude Include="ClientCommandFactory.h">
       <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommand.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommand1.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommand2.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommand3.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommand4.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommand5.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommand6.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommandExecutor.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommandFactory.h">
+      <Filter>DriverCommands</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
