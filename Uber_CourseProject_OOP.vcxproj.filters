@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="DriverCommands">
+      <UniqueIdentifier>{e704caab-16d9-4808-b548-eb6fbd5d723d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ClientCommands">
+      <UniqueIdentifier>{b36a8786-616b-4e7e-9c62-6deda9b3b8f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Uber_CourseProject_OOP.cpp">
@@ -41,6 +47,33 @@
     </ClCompile>
     <ClCompile Include="Driver.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommand1.cpp">
+      <Filter>ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommand2.cpp">
+      <Filter>ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommand3.cpp">
+      <Filter>ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommand4.cpp">
+      <Filter>ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommand5.cpp">
+      <Filter>ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommand6.cpp">
+      <Filter>ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommandExecutor.cpp">
+      <Filter>ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommandFactory.cpp">
+      <Filter>ClientCommands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +106,36 @@
     </ClInclude>
     <ClInclude Include="Vector.hpp">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommand.h">
+      <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommand1.h">
+      <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommand2.h">
+      <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommand3.h">
+      <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommand4.h">
+      <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommand5.h">
+      <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommand6.h">
+      <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommandExecutor.h">
+      <Filter>ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommandFactory.h">
+      <Filter>ClientCommands</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
