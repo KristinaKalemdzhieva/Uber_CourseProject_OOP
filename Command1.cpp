@@ -10,9 +10,10 @@ Command1::Command1(const MyString& username, const MyString& password, const MyS
 	user = new Driver(username, password, firstName, lastName, carNumber, phoneNumber);
 }
 
-void Command1::execute(std::ostream& os, System* system)
+bool Command1::execute(std::ostream& os, System* system)
 {
 	system->registerUser(user);
+	return false;
 }
 
 Command1::~Command1()

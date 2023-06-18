@@ -5,7 +5,9 @@ DriverCommand1::DriverCommand1(const MyString& name, const int x, const int y) :
 
 }
 
-void DriverCommand1::execute(std::ostream& os, Driver* driver)
+bool DriverCommand1::execute(std::ostream& os, Driver* driver, System* system)
 {
 	driver->changeAddress(address);
+
+	return false;
 }

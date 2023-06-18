@@ -1,11 +1,8 @@
 #include "DriverCommandExecutor.h"
 
-DriverCommandExecutor::DriverCommandExecutor(Driver* driver) : driver(driver)
+bool DriverCommandExecutor::executeCommand(DriverCommand* command, Driver* driver, System* system)
 {
+	stop = command->execute(std::cout, driver, system);
 
-}
-
-void DriverCommandExecutor::executeCommand(DriverCommand* command)
-{
-	command->execute(std::cout, driver);
+	return stop;
 }

@@ -1,14 +1,14 @@
 #pragma once
-#include "System.h"
 #include "Command.h"
 
 class CommandExecutor
 {
-	System* system;
+	System* system = nullptr;
+	bool stop = false;
 
 public:
 	CommandExecutor();
-	void executeCommand(Command* command);
+	bool executeCommand(Command* command);
 
 	~CommandExecutor();
 };

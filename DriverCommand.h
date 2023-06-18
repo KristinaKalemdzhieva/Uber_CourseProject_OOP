@@ -1,10 +1,11 @@
 #pragma once
 #include <iostream>
 #include "Driver.h"
+#include "System.h"
 
 class DriverCommand
 {
 public:
-	virtual void execute(std::ostream& os, Driver* driver) = 0;
+	virtual bool execute(std::ostream& os, Driver* driver, System* system) = 0;
 	virtual ~DriverCommand() = default;
 };

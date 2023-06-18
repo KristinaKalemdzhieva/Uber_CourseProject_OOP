@@ -5,7 +5,8 @@ DriverCommand6::DriverCommand6(const unsigned id, const double amount) : id(id),
 
 }
 
-void DriverCommand6::execute(std::ostream& os, Driver* driver)
+bool DriverCommand6::execute(std::ostream& os, Driver* driver, System* system)
 {
 	//driver->acceptPayment(id, amount);
+	return false;
 }

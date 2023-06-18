@@ -6,7 +6,9 @@ ClientCommand5::ClientCommand5(const MyString& firstName, const MyString& lastNa
 
 }
 
-void ClientCommand5::execute(std::ostream& os, Client* client)
+bool ClientCommand5::execute(std::ostream& os, Client* client, Vector<User*> users, Vector<Order*> orders)
 {
 	client->rate(firstName, lastName, rating);
+
+	return false;
 }

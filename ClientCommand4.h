@@ -8,5 +8,5 @@ class ClientCommand4 : public ClientCommand
 
 public:
 	ClientCommand4(const unsigned id, const double amount);
-	void execute(std::ostream& os, Client* client) override;
+	bool execute(std::ostream& os, Client* client, Vector<User*> users, Vector<Order*> orders) override;
 };

@@ -114,6 +114,15 @@
     <ClCompile Include="CommandFactory.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
+    <ClCompile Include="Command3.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCommand7.cpp">
+      <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommand7.cpp">
+      <Filter>ClientCommands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
@@ -217,6 +226,15 @@
     </ClInclude>
     <ClInclude Include="CommandFactory.h">
       <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Command3.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCommand7.h">
+      <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommand7.h">
+      <Filter>ClientCommands</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

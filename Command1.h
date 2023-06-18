@@ -7,13 +7,13 @@
 //register
 class Command1 : public Command
 {
-	User* user;
+	User* user = nullptr;
 //	UserType userType;
 
 public:
 	Command1(const MyString& username, const MyString& password, const MyString& firstName, const MyString& lastName);
 	Command1(const MyString& username, const MyString& password, const MyString& firstName, const MyString& lastName, const MyString& carNumber, const unsigned phoneNumber);
-	void execute(std::ostream& os, System* system) override;
+	bool execute(std::ostream& os, System* system) override;
 
 	~Command1();
 };

@@ -1,10 +1,11 @@
 #pragma once
 #include <iostream>
 #include "Client.h"
+#include "Vector.hpp"
 
 class ClientCommand
 {
 public:
-	virtual void execute(std::ostream& os, Client* client) = 0;
+	virtual bool execute(std::ostream& os, Client* client, Vector<User*> users, Vector<Order*> orders) = 0;
 	virtual ~ClientCommand() = default;
 };

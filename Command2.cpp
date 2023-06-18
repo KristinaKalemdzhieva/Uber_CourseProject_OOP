@@ -6,7 +6,8 @@ Command2::Command2(const MyString& username, const MyString& password)
 
 }
 
-void Command2::execute(std::ostream& os, System* system)
+bool Command2::execute(std::ostream& os, System* system)
 {
 	system->login(username, password);
+	return false;
 }

@@ -1,10 +1,12 @@
 #pragma once
 #include "DriverCommand1.h"
+#include "DriverCommand2.h"
 #include "DriverCommand3.h"
 #include "DriverCommand4.h"
 #include "DriverCommand5.h"
 #include "DriverCommand6.h"
-#include "System.h"
+#include "DriverCommand7.h"
+//#include "System.h"
 
 class DriverCommandFactory
 {
@@ -13,6 +15,6 @@ class DriverCommandFactory
 	DriverCommandFactory& operator=(const DriverCommandFactory& other) = delete;
 
 public:
-	DriverCommand* getCommand(System* system) const;
+	DriverCommand* getCommand() const;
 	static DriverCommandFactory& getInstance();
 };

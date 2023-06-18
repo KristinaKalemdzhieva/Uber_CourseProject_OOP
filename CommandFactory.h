@@ -1,6 +1,7 @@
 #pragma once
 #include "Command1.h"
 #include "Command2.h"
+#include "Command3.h"
 
 class CommandFactory
 {

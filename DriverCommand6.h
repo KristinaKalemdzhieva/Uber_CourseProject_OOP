@@ -8,5 +8,5 @@ class DriverCommand6 : public DriverCommand
 
 public:
 	DriverCommand6(const unsigned id, const double amount);
-	void execute(std::ostream& os, Driver* driver) override;
+	bool execute(std::ostream& os, Driver* driver, System* system) override;
 };

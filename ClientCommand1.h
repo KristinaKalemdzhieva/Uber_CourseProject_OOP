@@ -1,15 +1,16 @@
 #pragma once
 #include "ClientCommand.h"
-#include "System.h"
 
 //order
 class ClientCommand1 : public ClientCommand
 {
-	System* system;
+//	System* system = nullptr;
 	Address address;
 	Address destination;
 
 public:
-	ClientCommand1(const Address& address, const Address& destination, System* system);
-	void execute(std::ostream& os, Client* client) override;
+	ClientCommand1(const Address& address, const Address& destination);
+	bool execute(std::ostream& os, Client* client, Vector<User*> users, Vector<Order*> orders) override;
+
+	//~ClientCommand1();
 };

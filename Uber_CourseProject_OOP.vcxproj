@@ -135,10 +135,12 @@
     <ClCompile Include="ClientCommand4.cpp" />
     <ClCompile Include="ClientCommand5.cpp" />
     <ClCompile Include="ClientCommand6.cpp" />
+    <ClCompile Include="ClientCommand7.cpp" />
     <ClCompile Include="ClientCommandExecutor.cpp" />
     <ClCompile Include="ClientCommandFactory.cpp" />
     <ClCompile Include="Command1.cpp" />
     <ClCompile Include="Command2.cpp" />
+    <ClCompile Include="Command3.cpp" />
     <ClCompile Include="CommandExecutor.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
     <ClCompile Include="Driver.cpp" />
@@ -148,6 +150,7 @@
     <ClCompile Include="DriverCommand4.cpp" />
     <ClCompile Include="DriverCommand5.cpp" />
     <ClCompile Include="DriverCommand6.cpp" />
+    <ClCompile Include="DriverCommand7.cpp" />
     <ClCompile Include="DriverCommandExecutor.cpp" />
     <ClCompile Include="DriverCommandFactory.cpp" />
     <ClCompile Include="MyString.cpp" />
@@ -168,11 +171,13 @@
     <ClInclude Include="ClientCommand4.h" />
     <ClInclude Include="ClientCommand5.h" />
     <ClInclude Include="ClientCommand6.h" />
+    <ClInclude Include="ClientCommand7.h" />
     <ClInclude Include="ClientCommandExecutor.h" />
     <ClInclude Include="ClientCommandFactory.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Command1.h" />
     <ClInclude Include="Command2.h" />
+    <ClInclude Include="Command3.h" />
     <ClInclude Include="CommandExecutor.h" />
     <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="Driver.h" />
@@ -183,6 +188,7 @@
     <ClInclude Include="DriverCommand4.h" />
     <ClInclude Include="DriverCommand5.h" />
     <ClInclude Include="DriverCommand6.h" />
+    <ClInclude Include="DriverCommand7.h" />
     <ClInclude Include="DriverCommandExecutor.h" />
     <ClInclude Include="DriverCommandFactory.h" />
     <ClInclude Include="Message.h" />

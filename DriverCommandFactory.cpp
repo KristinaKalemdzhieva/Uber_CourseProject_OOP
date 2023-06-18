@@ -18,11 +18,12 @@ namespace
 		std::cout << "|          4.Decline order             |" << std::endl;
 		std::cout << "|          5.Finish order              |" << std::endl;
 		std::cout << "|          6.Accept payment            |" << std::endl;
+		std::cout << "|          7.Logout                    |" << std::endl;
 		std::cout << "|______________________________________|" << std::endl << std::endl;
 	}
 }
 
-DriverCommand* DriverCommandFactory::getCommand(System* system) const
+DriverCommand* DriverCommandFactory::getCommand() const
 {
 	printMenu();
 
@@ -44,7 +45,7 @@ DriverCommand* DriverCommandFactory::getCommand(System* system) const
 	}
 	else if (n == 2)   //check_messages
 	{
-		//printirane na syobshteniya
+		return new DriverCommand2();
 	}
 	else if (n == 3)   //accept_order
 	{
@@ -56,7 +57,7 @@ DriverCommand* DriverCommandFactory::getCommand(System* system) const
 		unsigned minutes;
 		std::cin >> minutes;
 
-		return new DriverCommand3(id, minutes, system);
+		return new DriverCommand3(id, minutes);
 	}
 	else if (n == 4) //decline_order
 	{
@@ -64,7 +65,7 @@ DriverCommand* DriverCommandFactory::getCommand(System* system) const
 		unsigned id;
 		std::cin >> id;
 
-		return new DriverCommand4(id, system);
+		return new DriverCommand4(id);
 	}
 	else if (n == 5)   //finish_order
 	{
@@ -72,9 +73,9 @@ DriverCommand* DriverCommandFactory::getCommand(System* system) const
 		unsigned id;
 		std::cin >> id;
 
-		return new DriverCommand5(id, system);
+		return new DriverCommand5(id);
 	}
-	else if (n == 6)   //accept_payment <id> <amount>
+	else if (n == 6)   //accept_payment
 	{
 		std::cout << "Order ID: ";
 		unsigned id;
@@ -86,9 +87,9 @@ DriverCommand* DriverCommandFactory::getCommand(System* system) const
 
 		return new DriverCommand6(id, amount);
 	}
-	else if (n == 7)
+	else if (n == 7)   //logout
 	{
-		//logout
+		return new DriverCommand7();
 	}
 	else
 	{

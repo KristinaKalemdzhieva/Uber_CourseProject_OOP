@@ -1,11 +1,8 @@
 #pragma once
 #include "ClientCommand.h"
 
-class ClientCommand3 : public ClientCommand
+class ClientCommand7 : public ClientCommand
 {
-	unsigned id;
-
 public:
-	ClientCommand3(const unsigned id);
 	bool execute(std::ostream& os, Client* client, Vector<User*> users, Vector<Order*> orders) override;
 };

@@ -5,6 +5,6 @@
 class Command
 {
 public:
-	virtual void execute(std::ostream& os, System* system) = 0;
+	virtual bool execute(std::ostream& os, System* system) = 0;
 	virtual ~Command() = default;
 };

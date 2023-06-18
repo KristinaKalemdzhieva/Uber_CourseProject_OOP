@@ -79,9 +79,9 @@ Command* CommandFactory::getCommand() const
 
 		return new Command2(username, password);
 	}
-	else if (n == 3)
+	else if (n == 3)    //close app
 	{
-		//end program
+		return new Command3();
 	}
 	else
 	{

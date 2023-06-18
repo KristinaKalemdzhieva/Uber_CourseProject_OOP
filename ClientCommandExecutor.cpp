@@ -1,11 +1,18 @@
 #include "ClientCommandExecutor.h"
 
-ClientCommandExecutor::ClientCommandExecutor(Client* client) : client(client)
-{
+//ClientCommandExecutor::ClientCommandExecutor(Client* client) : client(client)
+//{
+//
+//}
 
+bool ClientCommandExecutor::executeCommand(ClientCommand* command, Client* client, Vector<User*> users, Vector<Order*> orders)
+{
+	stop = command->execute(std::cout, client, users, orders);
+
+	return stop;
 }
 
-void ClientCommandExecutor::executeCommand(ClientCommand* command)
-{
-	command->execute(std::cout, client);
-}
+//ClientCommandExecutor::~ClientCommandExecutor()
+//{
+//	delete client;
+//}

@@ -5,7 +5,8 @@
 #include "ClientCommand4.h"
 #include "ClientCommand5.h"
 #include "ClientCommand6.h"
-#include "System.h"
+#include "ClientCommand7.h"
+//#include "System.h"
 
 class ClientCommandFactory
 {
@@ -14,6 +15,6 @@ class ClientCommandFactory
 	ClientCommandFactory& operator=(const ClientCommandFactory& other) = delete;
 
 public:
-	ClientCommand* getCommand(System* system) const;
+	ClientCommand* getCommand() const;
 	static ClientCommandFactory& getInstance();
 };

@@ -5,9 +5,11 @@ CommandExecutor::CommandExecutor()
 	system = new System();
 }
 
-void CommandExecutor::executeCommand(Command* command)
+bool CommandExecutor::executeCommand(Command* command)
 {
-	command->execute(std::cout, system);
+	stop = command->execute(std::cout, system);
+
+	return stop;
 }
 
 CommandExecutor::~CommandExecutor()

@@ -1,11 +1,19 @@
 #include "DriverCommand3.h"
 
-DriverCommand3::DriverCommand3(const unsigned id, const unsigned minutes, System* system) : id(id), minutes(minutes), system(system)
+DriverCommand3::DriverCommand3(const unsigned id, const unsigned minutes) 
+	: id(id), minutes(minutes)
 {
 
 }
 
-void DriverCommand3::execute(std::ostream& os, Driver* driver)
+bool DriverCommand3::execute(std::ostream& os, Driver* driver, System* system)
 {
 	//driver->acceptOrder(id, minutes, system);
+
+	return false;
 }
+
+//DriverCommand3::~DriverCommand3()
+//{
+//	delete system;
+//}

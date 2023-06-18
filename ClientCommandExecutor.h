@@ -3,9 +3,12 @@
 
 class ClientCommandExecutor
 {
-	Client* client;
+	//Client* client = nullptr;
+	bool stop = false;
 
 public:
-	ClientCommandExecutor(Client* client);
-	void executeCommand(ClientCommand* command);
+	//ClientCommandExecutor(Client* client);
+	bool executeCommand(ClientCommand* command, Client* client, Vector<User*> users, Vector<Order*> orders);
+
+//	~ClientCommandExecutor();
 };

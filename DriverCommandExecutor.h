@@ -1,11 +1,11 @@
 #pragma once
 #include "DriverCommand.h"
+//#include "System.h"
 
 class DriverCommandExecutor
 {
-	Driver* driver;
+	bool stop = false;
 
 public:
-	DriverCommandExecutor(Driver* driver);
-	void executeCommand(DriverCommand* command);
+	bool executeCommand(DriverCommand* command, Driver* driver, System* system);
 };

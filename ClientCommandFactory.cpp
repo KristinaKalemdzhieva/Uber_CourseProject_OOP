@@ -19,11 +19,12 @@ namespace
 		std::cout << "|          4.Pay order                 |" << std::endl;
 		std::cout << "|          5.Rate driver               |" << std::endl;
 		std::cout << "|          6.Add money                 |" << std::endl;
+		std::cout << "|          7.Logout                    |" << std::endl;
 		std::cout << "|______________________________________|" << std::endl << std::endl;
 	}
 }
 
-ClientCommand* ClientCommandFactory::getCommand(System* system) const
+ClientCommand* ClientCommandFactory::getCommand() const
 {
 	printMenu();
 
@@ -76,7 +77,7 @@ ClientCommand* ClientCommandFactory::getCommand(System* system) const
 			to.addClarifyingInfo(clarifyingInfo);
 		}
 
-		return new ClientCommand1(from, to, system);
+		return new ClientCommand1(from, to);
 	}
 	else if (n == 2)    //check_order
 	{
@@ -130,9 +131,9 @@ ClientCommand* ClientCommandFactory::getCommand(System* system) const
 
 		return new ClientCommand6(amount);
 	}
-	else if (n == 7)
+	else if (n == 7)   //logout
 	{
-		//logout
+		return new ClientCommand7();
 	}
 	else
 	{

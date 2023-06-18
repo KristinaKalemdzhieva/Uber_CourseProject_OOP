@@ -10,5 +10,5 @@ class Command2 : public Command
 
 public:
 	Command2(const MyString& username, const MyString& password);
-	void execute(std::ostream& os, System* system) override;
+	bool execute(std::ostream& os, System* system) override;
 };
