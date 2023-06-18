@@ -136,7 +136,7 @@ ClientCommand* ClientCommandFactory::getCommand(System* system) const
 	}
 	else
 	{
-		//throw
+		throw std::invalid_argument("Invalid option");
 	}
 }
 

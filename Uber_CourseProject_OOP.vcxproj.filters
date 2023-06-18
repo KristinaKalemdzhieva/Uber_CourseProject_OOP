@@ -19,6 +19,9 @@
     <Filter Include="ClientCommands">
       <UniqueIdentifier>{b36a8786-616b-4e7e-9c62-6deda9b3b8f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{b64a0477-0b90-4ccf-a678-948765f73da3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Uber_CourseProject_OOP.cpp">
@@ -98,6 +101,18 @@
     </ClCompile>
     <ClCompile Include="DriverCommandFactory.cpp">
       <Filter>DriverCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="Command1.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Command2.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandExecutor.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandFactory.cpp">
+      <Filter>Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +202,21 @@
     </ClInclude>
     <ClInclude Include="DriverCommandFactory.h">
       <Filter>DriverCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Command1.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Command2.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandExecutor.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandFactory.h">
+      <Filter>Commands</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
