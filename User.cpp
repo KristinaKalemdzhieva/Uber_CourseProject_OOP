@@ -26,6 +26,11 @@ const MyString& User::getLastName() const
 	return lastName;
 }
 
+double User::getAccount() const
+{
+	return account;
+}
+
 UserType User::getUserType() const
 {
 	return userType;

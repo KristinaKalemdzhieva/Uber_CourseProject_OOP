@@ -48,7 +48,7 @@ ClientCommand* ClientCommandFactory::getCommand() const
 
 		Address from(name, x, y);
 
-		if (strcmp(answer, "yes"))
+		if (strcmp(answer, "yes") == 0)
 		{
 			std::cout << "Clarifying information: ";
 			MyString clarifyingInfo;
@@ -68,7 +68,7 @@ ClientCommand* ClientCommandFactory::getCommand() const
 
 		Address to(name, x, y);
 
-		if (strcmp(answer, "yes"))
+		if (strcmp(answer, "yes") == 0)
 		{
 			std::cout << "Clarifying information: ";
 			MyString clarifyingInfo;

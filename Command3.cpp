@@ -2,6 +2,6 @@
 
 bool Command3::execute(std::ostream& os, System* system)
 {
-	//system -> save info in file
+	system->saveInfoInFile();
 	return true;
 }

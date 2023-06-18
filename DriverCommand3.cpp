@@ -9,8 +9,8 @@ DriverCommand3::DriverCommand3(const unsigned id, const unsigned messageNumber, 
 bool DriverCommand3::execute(std::ostream& os, Driver* driver, Vector<User*>& users, Vector<Order*>& orders)
 {
 	driver->acceptOrder(id, messageNumber);
-	orders[id]->setDriver(driver);
-	orders[id]->setArrivalTime(minutes);
+	orders[id - 1]->setDriver(driver);
+	orders[id - 1]->setArrivalTime(minutes);
 
 	return false;
 }

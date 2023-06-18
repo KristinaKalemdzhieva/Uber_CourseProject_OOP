@@ -2,7 +2,7 @@
 #include "Command.h"
 #include "MyString.h"
 
-//login
+//Login
 class Command2 : public Command
 {
 	MyString username;

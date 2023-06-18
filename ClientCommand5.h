@@ -4,9 +4,9 @@
 //Rate driver
 class ClientCommand5 : public ClientCommand
 {
+	unsigned short rating;
 	MyString firstName;
 	MyString lastName;
-	unsigned short rating;
 
 public:
 	ClientCommand5(const MyString& firstName, const MyString& lastName, const unsigned short rating);

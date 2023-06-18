@@ -76,9 +76,14 @@ const Address& Order::getDestination() const
 
 void Order::check() const
 {
-	if (status == OrderStatus::Finished || status == OrderStatus::Cancelled)
+	if (status == OrderStatus::Cancelled)
 	{
 		throw std::invalid_argument("No such order!");
+	}
+	else if (status == OrderStatus::Finished)
+	{
+		std::cout << "Your order has been finished." << std::endl;
+		return;
 	}
 	else if (status == OrderStatus::NotAccepted)
 	{
@@ -104,10 +109,15 @@ void Order::rateDriver(const unsigned short rating)
 	driver->setRating(rating);
 }
 
-void Order::changeOrderStatus(OrderStatus newStatus)
+void Order::changeOrderStatus(OrderStatus newStatus) //only for changing status to cancelled or finished
 {
-	//add switch for the different cases and the following consequences for the driver from them
 	status = newStatus;
+
+	if (status == OrderStatus::Cancelled)
+	{
+		driver->setIfTakenOrNot(false);
+		driver = nullptr;
+	}
 }
 
 OrderStatus Order::getOrderStatus() const

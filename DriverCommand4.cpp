@@ -17,11 +17,11 @@ bool DriverCommand4::execute(std::ostream& os, Driver* driver, Vector<User*>& us
 	{
 		if (users[i]->getUserType() == UserType::Driver)
 		{
-			if (minDistance > static_cast<Driver*>(users[i])->getDistance(orders[id]->getAddress()) && !static_cast<Driver*>(users[i])->isTaken())
+			if (minDistance > static_cast<Driver*>(users[i])->getDistance(orders[id - 1]->getAddress()) && !static_cast<Driver*>(users[i])->isTaken())
 			{
-				if (orders[id]->getDriver() != static_cast<Driver*>(users[i]))
+				if (orders[id - 1]->getDriver() != static_cast<Driver*>(users[i]))
 				{
-					minDistance = static_cast<Driver*>(users[i])->getDistance(orders[id]->getAddress());
+					minDistance = static_cast<Driver*>(users[i])->getDistance(orders[id - 1]->getAddress());
 					userId = i;
 				}
 			}
@@ -34,7 +34,7 @@ bool DriverCommand4::execute(std::ostream& os, Driver* driver, Vector<User*>& us
 	}
 	else
 	{
-		orders[id]->askDriver(static_cast<Driver*>(users[userId]));
+		orders[id - 1]->askDriver(static_cast<Driver*>(users[userId]));
 	}
 
 	return false;

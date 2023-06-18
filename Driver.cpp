@@ -1,7 +1,5 @@
 #include "Driver.h"
 
-//da se izmisi koga da se trie veche izpylneno syobshtenie i kak da razberem koe pored vyv vektora
-
 Driver::Driver(const MyString& username, const MyString& password, const MyString& firstName, const MyString& lastName, const MyString& carNumber, const unsigned phoneNumber)
 	: User(username, password, firstName, lastName, UserType::Driver), carNumber(carNumber), phoneNumber(phoneNumber)
 {
@@ -22,6 +20,11 @@ const MyString& Driver::getCarNumber() const
 
 const size_t Driver::getRating() const
 {
+	if (ratingsSum == 0 || ratingsCount == 0)
+	{
+		return 0;
+	}
+
 	return ratingsSum / ratingsCount;
 }
 
@@ -129,4 +132,17 @@ void Driver::acceptPayment(const unsigned id, const unsigned messageId, const do
 	}
 
 	account += amount;
+
+	try
+	{
+		messages.popAt(messageId - 1);
+	}
+	catch (std::out_of_range& ex)
+	{
+		std::cout << ex.what() << std::endl << std::endl;
+	}
+	catch (std::invalid_argument& ex)
+	{
+		std::cout << ex.what() << std::endl << std::endl;
+	}
 }

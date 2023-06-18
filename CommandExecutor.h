@@ -3,8 +3,8 @@
 
 class CommandExecutor
 {
-	System* system = nullptr;
 	bool stop = false;
+	System* system = nullptr;
 
 public:
 	CommandExecutor();

@@ -26,6 +26,7 @@ public:
 	const MyString& getPassword() const;
 	const MyString& getFirstName() const;
 	const MyString& getLastName() const;
+	double getAccount() const;
 
 	UserType getUserType() const;
 };

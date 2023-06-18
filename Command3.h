@@ -1,7 +1,7 @@
 #pragma once
 #include "Command.h"
 
-//close app
+//Close app
 class Command3 : public Command
 {
 public:

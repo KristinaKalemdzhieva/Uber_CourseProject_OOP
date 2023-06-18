@@ -4,11 +4,10 @@
 #include "Driver.h"
 #include "Client.h"
 
-//register
+//Register
 class Command1 : public Command
 {
 	User* user = nullptr;
-//	UserType userType;
 
 public:
 	Command1(const MyString& username, const MyString& password, const MyString& firstName, const MyString& lastName);

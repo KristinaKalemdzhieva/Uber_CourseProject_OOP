@@ -20,14 +20,14 @@ class Order
 	unsigned arrivalTime = 0;
 	OrderStatus status = OrderStatus::NotAccepted;
 
-	Driver* driver = nullptr;  // trqbva da se triqat
-	Message* message = nullptr; // trqbva da se triqt
+	Driver* driver = nullptr;  
+	Message* message = nullptr; 
 
 	Address address;
 	Address destination;
 
 public:
-	Order() = default; //because of client's pointer
+	Order() = default; 
 	Order(const Address& address, const Address& destination);
 
 	void setArrivalTime(const unsigned arrivalTime);

@@ -9,14 +9,14 @@ bool DriverCommand5::execute(std::ostream& os, Driver* driver, Vector<User*>& us
 {
 	try
 	{
-		driver->finishOrder(id, orders[id]->getDestination());
+		driver->finishOrder(id, orders[id - 1]->getDestination());
 	}
 	catch (std::invalid_argument& ex)
 	{
 		std::cout << ex.what() << std::endl << std::endl;
 	}
 
-	orders[id]->changeOrderStatus(OrderStatus::Finished);
+	orders[id - 1]->changeOrderStatus(OrderStatus::Finished);
 
 	return false;
 }
