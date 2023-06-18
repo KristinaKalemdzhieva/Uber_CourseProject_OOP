@@ -5,8 +5,8 @@ template <typename T>
 class Vector
 {
 	T* data = nullptr;
-	size_t capacity = 1;
-	size_t size = 0;
+	size_t capacity;
+	size_t size;
 
 	void resize();
 
@@ -16,7 +16,7 @@ class Vector
 	void moveFrom(Vector<T>&& other);
 
 public:
-	Vector() = default;
+	Vector();
 	Vector(const Vector<T>& other);
 	Vector<T>& operator=(const Vector<T>& other);
 
@@ -30,12 +30,12 @@ public:
 	void pushAt(T&& element, const size_t index);
 
 	void popBack();
-	void popAt(const size_t index);
+	void popAt(const int index);
 
 	const T& operator[](const size_t index) const;
 	T& operator[](const size_t index);
 
-	void empty() const;
+	bool empty() const;
 	void clear();
 
 	size_t getSize() const;
@@ -44,6 +44,15 @@ public:
 
 	~Vector();
 };
+
+template <typename T>
+Vector<T>::Vector()
+{
+	capacity = 2;
+	size = 0;
+
+	data = new T[capacity];
+}
 
 template <typename T>
 void Vector<T>::resize()
@@ -78,7 +87,8 @@ void Vector<T>::copyFrom(const Vector<T>& other)
 template <typename T>
 void Vector<T>::free()
 {
-	delete data;
+	delete[] data;
+	data = nullptr;
 	capacity = size = 0;
 }
 
@@ -196,7 +206,7 @@ void Vector<T>::popBack()
 }
 
 template <typename T>
-void Vector<T>::popAt(const size_t index)
+void Vector<T>::popAt(const int index)
 {
 	if (index > size)
 	{
@@ -224,7 +234,7 @@ T& Vector<T>::operator[](const size_t index)
 }
 
 template <typename T>
-void Vector<T>::empty() const
+bool Vector<T>::empty() const
 {
 	return size == 0;
 }

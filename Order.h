@@ -31,14 +31,19 @@ public:
 	Order(const Address& address, const Address& destination);
 
 	void setArrivalTime(const unsigned arrivalTime);
+	void setMessage(Message* message);
+	void askDriver(Driver* driver);
 	void setDriver(Driver* driver);
 
 	const unsigned getId() const;
+	Driver* getDriver() const;
 	const MyString& getDriverFirstName() const;
 	const MyString& getDriverLastName() const;
-	//const Address& getAddress() const;
 	const MyString& getAddressName() const;
 	const MyString& getDistanceName() const;
+
+	const Address& getAddress() const;
+	const Address& getDestination() const;
 
 	void check() const;
 

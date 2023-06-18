@@ -31,7 +31,7 @@ DriverCommand* DriverCommandFactory::getCommand() const
 	int n;
 	std::cin >> n;
 
-	if (n == 1)   //change_address
+	if (n == 1)   //Change address
 	{
 		std::cout << "Name of address: ";
 		MyString name;
@@ -43,12 +43,16 @@ DriverCommand* DriverCommandFactory::getCommand() const
 
 		return new DriverCommand1(name, x, y);
 	}
-	else if (n == 2)   //check_messages
+	else if (n == 2)   //Check messages
 	{
 		return new DriverCommand2();
 	}
-	else if (n == 3)   //accept_order
+	else if (n == 3)   //Accept order
 	{
+		std::cout << "Message number: ";
+		unsigned messageId;
+		std::cin >> messageId;
+
 		std::cout << "Order ID: ";
 		unsigned id;
 		std::cin >> id;
@@ -57,17 +61,21 @@ DriverCommand* DriverCommandFactory::getCommand() const
 		unsigned minutes;
 		std::cin >> minutes;
 
-		return new DriverCommand3(id, minutes);
+		return new DriverCommand3(id, messageId, minutes);
 	}
-	else if (n == 4) //decline_order
+	else if (n == 4) //Decline order 
 	{
+		std::cout << "Message number: ";
+		unsigned messageId;
+		std::cin >> messageId;
+
 		std::cout << "Order ID: ";
 		unsigned id;
 		std::cin >> id;
 
-		return new DriverCommand4(id);
+		return new DriverCommand4(id, messageId);
 	}
-	else if (n == 5)   //finish_order
+	else if (n == 5)   //Finish order 
 	{
 		std::cout << "Order ID: ";
 		unsigned id;
@@ -75,8 +83,12 @@ DriverCommand* DriverCommandFactory::getCommand() const
 
 		return new DriverCommand5(id);
 	}
-	else if (n == 6)   //accept_payment
+	else if (n == 6)   //Accept payment
 	{
+		std::cout << "Message number: ";
+		unsigned messageId;
+		std::cin >> messageId;
+
 		std::cout << "Order ID: ";
 		unsigned id;
 		std::cin >> id;
@@ -85,15 +97,15 @@ DriverCommand* DriverCommandFactory::getCommand() const
 		double amount;
 		std::cin >> amount;
 
-		return new DriverCommand6(id, amount);
+		return new DriverCommand6(id, messageId, amount);
 	}
-	else if (n == 7)   //logout
+	else if (n == 7)   //Logout
 	{
 		return new DriverCommand7();
 	}
 	else
 	{
-		throw std::invalid_argument("Invalid option");
+		std::cout << "Invalid option! Try again!" << std::endl << std::endl;
 	}
 }
 

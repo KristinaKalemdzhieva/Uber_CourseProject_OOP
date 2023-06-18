@@ -6,12 +6,15 @@ Client::Client(const MyString& username, const MyString& password, const MyStrin
 
 }
 
-void Client::orderTaxi(const Address& address, const Address& destination)
+Order* Client::orderTaxi(const Address& address, const Address& destination)
 {
-	//make connection with the system and find the nearest driver
 	order = new Order(address, destination);
-
 	std::cout << "Order ID: " << order->getId() << std::endl << std::endl;
+
+	Message* message = new OrderMessage(order->getId(), getFirstName(), getLastName(), address.getName(), destination.getName());
+	order->setMessage(message);
+
+	return order;
 }
 
 void Client::checkOrder(const unsigned id)

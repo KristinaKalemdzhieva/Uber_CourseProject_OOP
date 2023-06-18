@@ -13,18 +13,17 @@ void System::login(const MyString& username, const MyString& password)
 		{
 			if (users[i]->getUserType() == UserType::Client)
 			{
-				//ClientCommandExecutor ex(dynamic_cast<Client*>(users[i]));
 				ClientCommandExecutor ex;
 
 				while (!ex.executeCommand(ClientCommandFactory::getInstance().getCommand(), static_cast<Client*>(users[i]), users, orders)) {}
 
 			}
-			//else
-			//{
-			//	DriverCommandExecutor ex;
+			else
+			{
+				DriverCommandExecutor ex;
 
-			////	while (!ex.executeCommand(DriverCommandFactory::getInstance().getCommand(), static_cast<Driver*>(users[i]), this)) {}
-			//}
+				while (!ex.executeCommand(DriverCommandFactory::getInstance().getCommand(), static_cast<Driver*>(users[i]), users, orders)) {}
+			}
 
 			break;
 		}

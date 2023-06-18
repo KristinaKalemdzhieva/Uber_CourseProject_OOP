@@ -16,10 +16,20 @@ void Order::setArrivalTime(const unsigned arrivalTime)
 	this->arrivalTime = arrivalTime;
 }
 
+void Order::setMessage(Message* message)
+{
+	this->message = message;
+}
+
+void Order::askDriver(Driver* driver)
+{
+	this->driver = driver;
+	driver->addMessage(message);
+}
+
 void Order::setDriver(Driver* driver)
 {
 	this->driver = driver;
-	//is here the right place to set the driver to be taken
 	this->driver->setIfTakenOrNot(true);
 	status = OrderStatus::Accepted;
 }
@@ -27,6 +37,11 @@ void Order::setDriver(Driver* driver)
 const unsigned Order::getId() const
 {
 	return id;
+}
+
+Driver* Order::getDriver() const
+{
+	return driver;
 }
 
 const MyString& Order::getDriverFirstName() const
@@ -39,11 +54,6 @@ const MyString& Order::getDriverLastName() const
 	return driver->getLastName();
 }
 
-//const Address& Order::getAddress() const
-//{
-//	
-//}
-
 const MyString& Order::getAddressName() const
 {
 	return address.getName();
@@ -52,6 +62,16 @@ const MyString& Order::getAddressName() const
 const MyString& Order::getDistanceName() const
 {
 	return destination.getName();
+}
+
+const Address& Order::getAddress() const
+{
+	return address;
+}
+
+const Address& Order::getDestination() const
+{
+	return destination;
 }
 
 void Order::check() const

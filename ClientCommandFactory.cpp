@@ -32,7 +32,7 @@ ClientCommand* ClientCommandFactory::getCommand() const
 	int n;
 	std::cin >> n;
 
-	if (n == 1)   //order
+	if (n == 1)   //Order taxi 
 	{
 		std::cout << "Name of address: ";
 		MyString name;
@@ -79,7 +79,7 @@ ClientCommand* ClientCommandFactory::getCommand() const
 
 		return new ClientCommand1(from, to);
 	}
-	else if (n == 2)    //check_order
+	else if (n == 2)    //Check order
 	{
 		std::cout << "Order ID: ";
 		unsigned id;
@@ -87,7 +87,7 @@ ClientCommand* ClientCommandFactory::getCommand() const
 
 		return new ClientCommand2(id);
 	}
-	else if (n == 3)   //cancel_order
+	else if (n == 3)   //Cancel order
 	{
 		std::cout << "Order ID: ";
 		unsigned id;
@@ -95,7 +95,7 @@ ClientCommand* ClientCommandFactory::getCommand() const
 
 		return new ClientCommand3(id);
 	}
-	else if (n == 4)   //pay
+	else if (n == 4)   //Pay order
 	{
 		std::cout << "Order ID: ";
 		unsigned id;
@@ -107,7 +107,7 @@ ClientCommand* ClientCommandFactory::getCommand() const
 
 		return new ClientCommand4(id, amount);
 	}
-	else if (n == 5)   //rate <name_of_driver> <rating> 
+	else if (n == 5)   //Rate driver
 	{
 		std::cout << "Driver's first name: ";
 		MyString firstName;
@@ -123,7 +123,7 @@ ClientCommand* ClientCommandFactory::getCommand() const
 
 		return new ClientCommand5(firstName, secondName, rating);
 	}
-	else if (n == 6)   //add_money 
+	else if (n == 6)   //Add money
 	{
 		std::cout << "Amount: ";
 		double amount;
@@ -131,13 +131,13 @@ ClientCommand* ClientCommandFactory::getCommand() const
 
 		return new ClientCommand6(amount);
 	}
-	else if (n == 7)   //logout
+	else if (n == 7)   //Logout
 	{
 		return new ClientCommand7();
 	}
 	else
 	{
-		throw std::invalid_argument("Invalid option");
+		std::cout << "Invalid option! Try again!" << std::endl << std::endl;
 	}
 }
 

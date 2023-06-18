@@ -1,6 +1,7 @@
 #pragma once
 #include "Message.h"
 #include "MyString.h"
+#include "Vector.hpp"
 
 class OrderMessage : public Message
 {

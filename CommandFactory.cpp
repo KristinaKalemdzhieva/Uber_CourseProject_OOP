@@ -30,7 +30,7 @@ Command* CommandFactory::getCommand() const
 	int n;
 	std::cin >> n;
 
-	if (n == 1)   //register
+	if (n == 1)   //Register
 	{
 		std::cout << "User type: ";
 		MyString type;
@@ -67,7 +67,7 @@ Command* CommandFactory::getCommand() const
 
 		return new Command1(username, password, firstName, lastName, carNumber, phoneNumber);
 	}
-	else if (n == 2)   //login
+	else if (n == 2)   //Login
 	{
 		std::cout << "Username: ";
 		MyString username;
@@ -79,13 +79,20 @@ Command* CommandFactory::getCommand() const
 
 		return new Command2(username, password);
 	}
-	else if (n == 3)    //close app
+	else if (n == 3)    //Close app 
 	{
+		std::cout << " ______________________________________" << std::endl;
+		std::cout << "|                                      |" << std::endl;
+		std::cout << "|  --- Thank you for choosing us! ---  |" << std::endl;
+		std::cout << "|        -- Have a nice day! --        |" << std::endl;
+		std::cout << "|               - Bye! -               |" << std::endl;
+		std::cout << "|______________________________________|" << std::endl << std::endl;
+
 		return new Command3();
 	}
 	else
 	{
-		throw std::invalid_argument("Invalid option");
+		std::cout << "Invalid option! Try again!" << std::endl << std::endl;
 	}
 }
 

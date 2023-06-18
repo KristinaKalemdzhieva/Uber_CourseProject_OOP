@@ -7,6 +7,7 @@
 class Driver : public User
 {
 	bool taken;
+	unsigned orderId;
 	unsigned phoneNumber;
 	size_t ratingsCount;
 	size_t ratingsSum;
@@ -32,8 +33,9 @@ public:
 
 	void changeAddress(const Address& newAddress);
 	void checkMessages() const;
-	/*void acceptOrder(const unsigned id, const unsigned minutes, System* system);
-	void declineOrder(const unsigned id, System* system) const;
-	void finishOrder(const unsigned id, System* system) const;
-	void acceptPayment(const unsigned id, const double amount, System* system);*/
+
+	void acceptOrder(const unsigned orderId, const unsigned messageId);
+	void declineOrder(const unsigned messageId);
+	void finishOrder(const unsigned id, const Address& destination);
+	void acceptPayment(const unsigned id, const unsigned messageId, const double amount);
 };

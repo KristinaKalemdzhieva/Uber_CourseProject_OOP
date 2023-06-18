@@ -63,9 +63,70 @@ void Driver::changeAddress(const Address& newAddress)
 
 void Driver::checkMessages() const
 {
+	if (messages.getSize() <= 0)
+	{
+		throw std::exception("No messages!");
+	}
+
 	for (size_t i = 0; i < messages.getSize(); ++i)
 	{
-		std::cout << "Message " << i << ":" << std::endl;
+		std::cout << "Message " << (i + 1) << ":" << std::endl;
 		messages[i]->printMessage();
 	}
+}
+
+void Driver::acceptOrder(const unsigned orderId, const unsigned messageId)
+{
+	this->orderId = orderId;
+	taken = true;
+
+	try
+	{
+		messages.popAt(messageId - 1);
+	}
+	catch (std::out_of_range& ex)
+	{
+		std::cout << ex.what() << std::endl << std::endl;
+	}
+	catch (std::invalid_argument& ex)
+	{
+		std::cout << ex.what() << std::endl << std::endl;
+	}
+}
+
+void Driver::declineOrder(const unsigned messageId)
+{
+	try
+	{
+		messages.popAt(messageId - 1);
+	}
+	catch (std::out_of_range& ex)
+	{
+		std::cout << ex.what() << std::endl << std::endl;
+	}
+	catch (std::invalid_argument& ex)
+	{
+		std::cout << ex.what() << std::endl << std::endl;
+	}
+}
+
+void Driver::finishOrder(const unsigned id, const Address& destination)
+{
+	if (id != orderId)
+	{
+		throw std::invalid_argument("Incorrect id!");
+	}
+
+	taken = false;
+	address.changeAddress(destination);
+}
+
+void Driver::acceptPayment(const unsigned id, const unsigned messageId, const double amount)
+{
+	if (id != orderId)
+	{
+		throw std::invalid_argument("Incorrect id!");
+	}
+
+	account += amount;
 }

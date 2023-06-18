@@ -1,19 +1,16 @@
 #include "DriverCommand3.h"
 
-DriverCommand3::DriverCommand3(const unsigned id, const unsigned minutes) 
-	: id(id), minutes(minutes)
+DriverCommand3::DriverCommand3(const unsigned id, const unsigned messageNumber, const unsigned minutes)
+	: id(id), messageNumber(messageNumber), minutes(minutes)
 {
 
 }
 
-bool DriverCommand3::execute(std::ostream& os, Driver* driver, System* system)
+bool DriverCommand3::execute(std::ostream& os, Driver* driver, Vector<User*>& users, Vector<Order*>& orders)
 {
-	//driver->acceptOrder(id, minutes, system);
+	driver->acceptOrder(id, messageNumber);
+	orders[id]->setDriver(driver);
+	orders[id]->setArrivalTime(minutes);
 
 	return false;
 }
-
-//DriverCommand3::~DriverCommand3()
-//{
-//	delete system;
-//}
